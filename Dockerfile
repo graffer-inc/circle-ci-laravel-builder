@@ -7,14 +7,13 @@ FROM circleci/php:7.3-stretch-node-browsers
 
 USER root
 
-
 RUN apt install lsb-release
 RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
     echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
     apt update -y && apt install google-cloud-sdk -y
 
-RUN apt install libzip-dev zlib1g-dev libsqlite3-dev libpng-dev pkg-config libmagickwand-dev python python-pip libssl-dev
+RUN apt install libzip-dev libsqlite3-dev libpng-dev pkg-config libmagickwand-dev python python-pip libssl-dev
 RUN docker-php-ext-install zip gd pcntl pdo_mysql exif sockets
 RUN pecl install imagick mongodb
 RUN docker-php-ext-enable imagick mongodb
