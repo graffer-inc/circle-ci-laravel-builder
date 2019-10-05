@@ -13,7 +13,7 @@ RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
     apt update -y && apt install google-cloud-sdk -y
 
-RUN apt install libzip-dev libsqlite3-dev libpng-dev pkg-config libmagickwand-dev python python-pip libssl-dev
+RUN apt install libzip-dev libsqlite3-dev libjpeg-dev libpng-dev pkg-config libmagickwand-dev python python-pip libssl-dev
 RUN docker-php-ext-install zip gd pcntl pdo_mysql exif sockets
 RUN pecl install imagick mongodb
 RUN docker-php-ext-enable imagick mongodb
