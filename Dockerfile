@@ -19,7 +19,7 @@ RUN pecl install imagick mongodb
 RUN docker-php-ext-enable imagick mongodb
 RUN pip install awscli awsebcli
 
-RUN apt install jq
+RUN apt install jq python-openssl
 RUN curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
 RUN chmod +x /usr/local/bin/ecs-cli
 
