@@ -3,7 +3,7 @@
 #--------------------------------------------------------------------------
 #
 
-FROM circleci/php:7.3-stretch-node-browsers
+FROM circleci/php:7.4-node-browsers
 
 USER root
 
